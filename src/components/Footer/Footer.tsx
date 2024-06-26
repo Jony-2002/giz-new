@@ -12,7 +12,7 @@ export default function Footer() {
     setCurrentLanguage(storedLang);
   }, []);
   return (
-    <footer className="bg-[#C30F08] text-white py-[50px]">
+    <footer id="footer" className="bg-[#C30F08] text-white py-[50px]">
       <div className="wrapper__page">
         <div className="flex items-center justify-between">
           <div>

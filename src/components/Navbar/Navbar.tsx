@@ -42,11 +42,11 @@ export default function Navbar() {
           </Link>
         </li>
         <li>
-          <Link className="font-semibold uppercase" href={"/admin-projects"}>
+          <a className="font-semibold uppercase" href={"#footer"}>
             {currentLanguage == "en" ? "Contacts" : ""}
             {currentLanguage == "ru" ? "Контакты" : ""}
             {currentLanguage == "tj" ? "Тамос" : ""}
-          </Link>
+          </a>
         </li>
       </ul>
     </nav>
