@@ -11,7 +11,7 @@ import "slick-carousel/slick/slick.css";
 export default function MainSlider() {
   var settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
