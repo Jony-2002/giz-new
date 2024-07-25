@@ -75,7 +75,7 @@ export default function ProjectsPage() {
     try {
       const response = await fetch("http://127.0.0.1:9595/get/project");
       const data = await response.json();
-      setData(data);
+      setData(data.reverse());
       console.log(data);
       return data;
     } catch (error) {

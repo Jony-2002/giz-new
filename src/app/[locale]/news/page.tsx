@@ -64,7 +64,7 @@ export default function NewsPage() {
 
 
   const [fromDate, setFromDate] = useState<Date | any>(null);
-  const [toDate, setToDate] = useState<Date | any>(formattedDate);
+  const [toDate, setToDate] = useState<Date | any>(null);
 
   useEffect(() => {
     filterNews();
@@ -124,7 +124,7 @@ export default function NewsPage() {
     try {
       const response = await fetch("http://127.0.0.1:9595/get/news");
       const data = await response.json();
-      setData(data);
+      setData(data.reverse());
       console.log(data);
       return data;
     } catch (error) {

@@ -23,7 +23,7 @@ export default function MainSlider() {
 
   async function getProjects() {
     try {
-      const response = await fetch("http://127.0.0.1:9595/get/project");
+      const response = await fetch("http://127.0.0.1:9595/get/news");
       const data = await response.json();
 
       let test = [];

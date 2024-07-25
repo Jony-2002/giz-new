@@ -1,6 +1,7 @@
 /* Menu.css */
 menu {
   position: relative;
+  display: none;
 }
 
 span {
@@ -37,7 +38,27 @@ span {
   left: 10px;
   background: none;
   border: none;
-  font-size: 16px;
+  font-size: 25px;
   cursor: pointer;
   color: white;
+}
+
+.lines_wrapper {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.line {
+  width: 40px;
+  height: 2px;
+  background-color: #fff;
+}
+
+@media (max-width: 991px) {
+  menu {
+    display: block;
+  }
 }

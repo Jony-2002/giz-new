@@ -45,7 +45,11 @@ export default function Menu() {
 
 	return (
 		<menu>
-			<span onClick={handleMenuClick}>Menu</span>
+			<div className="lines_wrapper" onClick={handleMenuClick}>
+				<div className="line"></div>
+				<div className="line"></div>
+				<div className="line"></div>
+			</div>
 			<div className={`bg-[#C30F08] menu-links ${menuOpen ? "open" : ""}`}>
 				<div>
 					<Link className="text-white" href={"/"}>
@@ -90,7 +94,7 @@ export default function Menu() {
 					))}
 				</div>
 				<div>
-					<button className="back-button" onClick={handleCloseMenu}>Back</button>
+					<button className="back-button" onClick={handleCloseMenu}>X</button>
 				</div>
 			</div>
 		</menu>
