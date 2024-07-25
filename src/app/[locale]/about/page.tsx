@@ -17,10 +17,10 @@ export default function AboutPage() {
   return (
     <main>
       <div className="wrapper__page">
-        <div className="flex items-center justify-center my-[100px]">
+        <div className="flex items-center justify-center my-[100px] mx-[30px]">
           <Image src={BigLogo} alt="BigLogo" />
         </div>
-        <div className="flex flex-col justify-start items-start gap-5 mb-[148px]">
+        <div className="flex flex-col justify-start items-start gap-5 mb-[148px] mx-[30px]">
           <p className="text-[18px] text-justify">
             {`${
               currentLanguage == "en"

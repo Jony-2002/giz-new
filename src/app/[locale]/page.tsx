@@ -26,7 +26,7 @@ export default async function Home() {
       <h1>{page.home.title}</h1> */}
       <MainSlider />
       <About />
-      <section className="h-[600px] flex justify-center items-center pt-[100px] pb-[50px]">
+      <section className="h-[600px] flex justify-center items-center mx-[30px] pt-[100px] pb-[50px]">
         <Map />
       </section>
       <Partners />

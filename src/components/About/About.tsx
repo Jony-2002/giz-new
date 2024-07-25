@@ -2,6 +2,8 @@
 import { Locale } from "@/i18n.config";
 import { useLayoutEffect, useState } from "react";
 
+import "./About.css"
+
 export default function About() {
   const [currentLanguage, setCurrentLanguage] = useState<Locale>("en");
 
@@ -10,14 +12,14 @@ export default function About() {
     setCurrentLanguage(storedLang);
   }, []);
   return (
-    <section>
+    <section className="mx-[30px]">
       <div className="wrapper__page">
         <h3 className="text-center text-[#C30F08] text-[34px] font-bold uppercase my-[50px]">
           {`${currentLanguage == "en" ? `Tajikistan` : ``}`}
           {`${currentLanguage == "ru" ? `Таджикистан` : ``}`}
           {`${currentLanguage == "tj" ? `Тоҷикистон` : ``}`}
         </h3>
-        <div className="flex items-start justify-between">
+        <div className="flex items-start justify-between gap-10 main-about-wrapper">
           <div className="max-w-[415px]">
             <p className="text-[40px] font-light">
               {`${currentLanguage == "en" ? `Geography` : ``}`}

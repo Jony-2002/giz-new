@@ -1,9 +1,5 @@
-.header {
-  display: flex;
-}
-
 @media (max-width: 991px) {
-  .navbar {
+  .switcher__container {
     display: none;
   }
 }

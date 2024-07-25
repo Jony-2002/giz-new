@@ -19,6 +19,18 @@ import MediaFiles from "@/components/MediaFiles/MediaFiles";
 import { useEffect, useRef, useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 
+import { Calendar } from "@/shadcn/ui/calendar";
+import { format } from "date-fns";
+import { CalendarIcon } from "lucide-react";
+
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Button } from "@/shadcn/ui/button";
+import { cn } from "@/lib/utils";
+
 import { useRouter } from "next/navigation";
 
 export default function AddNewsPage() {
@@ -36,6 +48,7 @@ export default function AddNewsPage() {
   const defaultLink = useRef<any>(null);
 
   const [inputs, setInputs] = useState<any>([]);
+  const [date, setDate] = useState<Date | any>(null)
 
   const handleAddClick = () => {
     const newKey = Date.now();
@@ -114,6 +127,7 @@ export default function AddNewsPage() {
       links: links,
       banner_url: images.banner,
       media_files: medias,
+      date,
     };
 
     console.log(data);
@@ -168,6 +182,9 @@ export default function AddNewsPage() {
       reader.readAsArrayBuffer(fileData);
     });
   }
+
+  console.log(date);
+
 
   return (
     <main className="bg-[#D3D3D3]">
@@ -383,6 +400,43 @@ export default function AddNewsPage() {
             </button>
           </div>
         </section>
+        <div className="flex items-center gap-5 my-10">
+          <div>
+            {/* <Popover>
+              <PopoverTrigger asChild>
+                <Button
+                  variant={"outline"}
+                  className={cn(
+                    "w-[180px] justify-start text-left font-normal",
+                    !date && "text-muted-foreground"
+                  )}
+                >
+                  <CalendarIcon className="mr-2 h-4 w-4" />
+                  {date ? (
+                    format(date, "PPP")
+                  ) : (
+                    <span>Pick a Date</span>
+                  )}
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-auto p-0">
+                <Calendar
+                  mode="single"
+                  selected={date}
+                  onSelect={setDate}
+                  initialFocus
+                />
+              </PopoverContent>
+            </Popover> */}
+            <Input
+              className="w-[150px]"
+              type="date"
+              placeholder="Введите название новости..."
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
+          </div>
+        </div>
         {/* <AddBanner /> */}
         <section>
           <p className="text-[20px] font-semibold mb-2">Banner*</p>

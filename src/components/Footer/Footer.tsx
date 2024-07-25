@@ -14,7 +14,7 @@ export default function Footer() {
   return (
     <footer id="footer" className="bg-[#C30F08] text-white py-[50px]">
       <div className="wrapper__page">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap gap-[50px] mx-[30px]">
           <div>
             <Logo />
             <p>

@@ -22,14 +22,14 @@ export default function Partners() {
     setCurrentLanguage(storedLang);
   }, []);
   return (
-    <section className="my-[100px]">
+    <section className="my-[100px] mx-[30px]">
       <div className="wrapper__page">
-        <h3 className="text-[24px] text-[#8D8D8D] font-bold uppercase text-center">
+        <h3 className="text-[24px] text-[#8D8D8D] font-bold uppercase text-center mb-5">
           {currentLanguage == "en" ? "Partners" : ""}
           {currentLanguage == "ru" ? "Парнёры" : ""}
           {currentLanguage == "tj" ? "Шарикон" : ""}
         </h3>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-center flex-wrap gap-10">
           <Link href={"/"}>
             <Image src={Logo2} alt="Logo1" />
             {/* <p className="text-[#4B4B4D] text-[18px] font-bold">Text 1</p> */}

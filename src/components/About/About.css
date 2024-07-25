@@ -1,0 +1,13 @@
+@media (max-width: 969px) {
+  .main-about-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-about-wrapper div:nth-child(2) > div {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -9,6 +9,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useLayoutEffect, useState } from "react";
 
+import "./page.css"
+
+
 export default function EachNews({ params }: { params: { slug: string } }) {
   const [data, setData] = useState([]);
   const [slugNews, setSlugNews] = useState<any>({});
@@ -130,7 +133,7 @@ export default function EachNews({ params }: { params: { slug: string } }) {
   return (
     <main>
       <div className="wrapper__page">
-        <div className="my-12">
+        <div className="my-12 mx-[30px]">
           {/* <Image
             src={slugNews?.BannerUrl}
             alt="currentNews"
@@ -139,7 +142,7 @@ export default function EachNews({ params }: { params: { slug: string } }) {
           <img
             src={`http://127.0.0.1:9595/get/static?path=Banners/${slugNews?.banner_url}`}
             alt="currentNews"
-            className="w-full h-[450px] object-cover"
+            className="w-full h-[450px] object-cover news__banner"
           />
           <div className="flex items-center gap-5 mt-5">
             {/* <p className="px-6 py-3 bg-[#C0C0C0] text-white rounded-[6px]">

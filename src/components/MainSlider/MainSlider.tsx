@@ -65,6 +65,7 @@ export default function MainSlider() {
 
   return (
     <section className="wrapper__page mt-10">
+      <div className="mx-[30px]">
       <Slider {...settings}>
         {data?.map((file: any) => {
           return (
@@ -107,6 +108,7 @@ export default function MainSlider() {
           );
         })}
       </Slider>
+      </div>
     </section>
   );
 }

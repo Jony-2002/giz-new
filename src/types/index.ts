@@ -24,6 +24,7 @@ export interface INews {
   links: string[];
   banner_url: any;
   mediaFiles: IMedia[];
+  date?: string;
 }
 
 export interface IProject {

@@ -3,6 +3,8 @@ import { Locale } from "@/i18n.config";
 import Link from "next/link";
 import { useLayoutEffect, useState } from "react";
 
+import "./Navbar.css"
+
 export default function Navbar() {
   const [currentLanguage, setCurrentLanguage] = useState<Locale>("en");
 
@@ -11,7 +13,7 @@ export default function Navbar() {
     setCurrentLanguage(storedLang);
   }, []);
   return (
-    <nav>
+    <nav className="navbar">
       <ul className="flex items-center gap-[30px]">
         <li>
           <Link className="font-semibold uppercase" href={"/"}>

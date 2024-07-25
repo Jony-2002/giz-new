@@ -68,6 +68,8 @@ import {
 } from "@/i18n.config";
 import { useLayoutEffect, useState } from "react";
 
+import "./LanguageSwitch.css"
+
 export default function LanguageSwitch({ locale }: { locale: Locale }) {
   const pathname = usePathname();
   const router = useRouter();
@@ -90,7 +92,7 @@ export default function LanguageSwitch({ locale }: { locale: Locale }) {
     <select
       value={currentLanguage}
       onChange={changeLocale}
-      className="rounded-sm bg-sky-200 px-2 py-1 text-sky-950"
+      className="rounded-sm bg-sky-200 px-2 py-1 text-sky-950 switcher__container"
     >
       {locales.map((loc) => (
         <option key={loc} value={loc}>

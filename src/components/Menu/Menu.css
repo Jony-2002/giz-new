@@ -1,0 +1,43 @@
+/* Menu.css */
+menu {
+  position: relative;
+}
+
+span {
+  cursor: pointer;
+}
+
+.menu-links {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: height 0.3s ease;
+  z-index: 1000;
+}
+
+.menu-links.open {
+  height: 100%;
+}
+
+.menu-links > div,
+.menu-links > a {
+  margin: 10px 0;
+}
+
+.back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+}

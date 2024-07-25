@@ -1,0 +1,10 @@
+@media (max-width: 493px) {
+  .projects__filter button:not(.reset__project){
+    width: 180px !important;
+    max-width: 100% !important;
+  }
+
+  .projects__list > div{
+    height: 250px;
+  }
+}

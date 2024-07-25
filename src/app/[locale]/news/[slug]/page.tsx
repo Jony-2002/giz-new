@@ -64,12 +64,12 @@ export default function EachNews({ params }: { params: { slug: string } }) {
   return (
     <main>
       <div className="wrapper__page">
-        <div className="my-12">
+        <div className="my-12 mx-[30px]">
           <img
             // src={slugNews?.bannerUrl}
             src={`http://127.0.0.1:9595/get/static?path=Banners/${slugNews?.banner_url}`}
             alt="currentNews"
-            className="w-full h-[450px] object-cover"
+            className="w-full h-[450px] object-cover news_slug"
           />
           <div className="flex items-center gap-5 mt-5">
             {/* <p className="px-6 py-3 bg-[#C0C0C0] text-white rounded-[6px]">
@@ -87,9 +87,9 @@ export default function EachNews({ params }: { params: { slug: string } }) {
                 ? findCategoty(slugNews?.category)?.tj
                 : ""}
             </p>
-            {/* <p className="px-6 py-3 bg-[#C0C0C0] text-white rounded-[6px]">
-              {slugNews?.location?.district}
-            </p> */}
+            <p className="px-6 py-3 bg-[#C0C0C0] text-white rounded-[6px]">
+              {slugNews?.date}
+            </p>
           </div>
           <h1 className="text-[#C30F08] text-[34px] font-bold text-center mt-[100px] mb-[30px]">
             {currentLanguage == "en" ? slugNews?.english?.name : ""}
@@ -129,7 +129,7 @@ export default function EachNews({ params }: { params: { slug: string } }) {
           </div>
         </div>
 
-        <div>
+        <div className="mx-[30px]">
           <section>
             <Swiper
               effect={"coverflow"}
