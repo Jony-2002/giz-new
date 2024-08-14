@@ -48,7 +48,7 @@ export default function LoginPage() {
           <form>
             <p className="text-center">
               Welcome to{" "}
-              <span className="inline-block font-bold text-[#C30F08]">GIZ</span>
+              <span className="inline-block font-bold text-[#C30F08]">AEGBAO</span>
             </p>
             <h2 className="text-center text-[55px] text-[#444444] mt-[60px] mb-[80px]">
               Sign in
