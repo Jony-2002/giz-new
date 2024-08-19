@@ -32,6 +32,7 @@ import { Button } from "@/shadcn/ui/button";
 import { cn } from "@/lib/utils";
 
 import { useRouter } from "next/navigation";
+import { API_KEY } from "@/utils";
 
 export default function AddNewsPage() {
   const [selectedOption, setSelectedOption] = useState("Event");
@@ -132,7 +133,7 @@ export default function AddNewsPage() {
 
     console.log(data);
 
-    const response = await fetch("http://127.0.0.1:9595/add/news", {
+    const response = await fetch(`${API_KEY}/add/news`, {
       headers: {
         "Content-Type": "application/json",
       },

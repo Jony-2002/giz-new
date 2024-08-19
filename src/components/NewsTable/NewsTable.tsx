@@ -14,6 +14,7 @@ import {
 import { makeData, Person } from "@/makeData";
 import { useEffect, useMemo, useReducer, useState } from "react";
 import { INews } from "@/types";
+import { API_KEY } from "@/utils";
 
 //custom sorting logic for one of our enum columns
 const sortStatusFn: SortingFn<Person> = (rowA, rowB, _columnId) => {
@@ -111,7 +112,7 @@ export default function NewsTable() {
   // console.log(table.getState().sorting);
 
   function getNews() {
-    fetch("http://127.0.0.1:9595/get/news")
+    fetch(`${API_KEY}/get/news`)
       .then((res) => {
         // console.log(res);
         return res.json();
@@ -136,7 +137,7 @@ export default function NewsTable() {
     // setCurrentIndex(index);
     // console.log("index", index);
     const response = await fetch(
-      `http://127.0.0.1:9595/delete/news?newsid=${row.original.Id}`,
+      `${API_KEY}/delete/news?newsid=${row.original.Id}`,
       {
         headers: {
           "Content-Type": "application/json",

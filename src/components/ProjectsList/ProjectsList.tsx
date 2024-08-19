@@ -1,6 +1,7 @@
 "use client";
 import { news_data } from "@/data/news";
 import { INews } from "@/types";
+import { API_KEY } from "@/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -10,7 +11,7 @@ export default function ProjectsList() {
 
   async function getProjects() {
     try {
-      const response = await fetch("http://127.0.0.1:9595/get/project");
+      const response = await fetch(`${API_KEY}/get/project`);
       const data = await response.json();
       setData(data);
       console.log(data);
@@ -33,7 +34,7 @@ export default function ProjectsList() {
             className="w-[438px] h-[321px] border relative flex flex-col justify-end items-start rounded-[13px] px-[30px] py-[20px] news__card"
           >
             <img
-              src={`http://127.0.0.1:9595/get/static?path=Banners/${news.banner_url}`}
+              src={`${API_KEY}/get/static?path=Banners/${news.banner_url}`}
               alt={news.banner_url}
               width={438}
               height={321}

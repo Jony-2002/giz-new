@@ -1,5 +1,6 @@
 "use client";
 import BigLogo from "@/assets/logos/white-logo.svg";
+import { API_KEY } from "@/utils";
 import { log } from "console";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -19,7 +20,7 @@ export default function LoginPage() {
       Password: passwordRef.current.value,
     };
 
-    const response = await fetch("http://127.0.0.1:9595/login", {
+    const response = await fetch(`${API_KEY}/login`, {
       headers: {
         "Content-Type": "application/json",
       },

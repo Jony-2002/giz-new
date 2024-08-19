@@ -30,6 +30,7 @@ import { districtsMap } from "./Geojsons";
 import { IProject } from "@/types";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { API_KEY } from "@/utils";
 
 interface AddControlProps {
   onClick: () => void;
@@ -155,7 +156,7 @@ export default function IntMap(props: any) {
 
   async function getProjects() {
     try {
-      const response = await fetch("http://127.0.0.1:9595/get/project");
+      const response = await fetch(`${API_KEY}/get/project`);
       const data = await response.json();
       setData(data);
       console.log(data);
@@ -226,7 +227,7 @@ export default function IntMap(props: any) {
                   width={200}
                   height={200}
                   className="w-full "
-                  src={`http://127.0.0.1:9595/get/static?path=Banners/${project?.banner_url}`}
+                  src={`${API_KEY}/get/static?path=Banners/${project?.banner_url}`}
                   alt="project"
                 />
                 <div className="">

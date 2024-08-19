@@ -19,6 +19,7 @@ import Link from "next/link";
 import { useEffect, useLayoutEffect, useState } from "react";
 
 import "./projects.css"
+import { API_KEY } from "@/utils";
 
 export default function ProjectsPage() {
   const [currentLanguage, setCurrentLanguage] = useState<Locale>("en");
@@ -73,7 +74,7 @@ export default function ProjectsPage() {
 
   async function getProjects() {
     try {
-      const response = await fetch("http://127.0.0.1:9595/get/project");
+      const response = await fetch(`${API_KEY}/get/project`);
       const data = await response.json();
       setData(data.reverse());
       console.log(data);
@@ -441,7 +442,7 @@ export default function ProjectsPage() {
                     className="w-[438px] h-[321px] border relative flex flex-col justify-end items-start rounded-[13px] px-[30px] py-[20px] news__card"
                   >
                     <img
-                      src={`http://127.0.0.1:9595/get/static?path=Banners/${news.banner_url}`}
+                      src={`${API_KEY}/get/static?path=Banners/${news.banner_url}`}
                       alt={news.banner_url}
                       width={438}
                       height={321}

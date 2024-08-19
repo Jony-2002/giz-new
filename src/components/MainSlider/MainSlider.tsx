@@ -1,6 +1,7 @@
 "use client";
 import { ICategory, projects_categories } from "@/data/categories";
 import { Locale } from "@/i18n.config";
+import { API_KEY } from "@/utils";
 import Image from "next/image";
 import { useEffect, useLayoutEffect, useState } from "react";
 import Slider from "react-slick";
@@ -23,7 +24,7 @@ export default function MainSlider() {
 
   async function getProjects() {
     try {
-      const response = await fetch("http://127.0.0.1:9595/get/news");
+      const response = await fetch(`${API_KEY}/get/news`);
       const data = await response.json();
 
       let test = [];
@@ -74,7 +75,7 @@ export default function MainSlider() {
               className="h-[450px] child_slider child_slider-1 pb-10 relative"
             >
               <img
-                src={`http://127.0.0.1:9595/get/static?path=Banners/${file?.banner_url}`}
+                src={`${API_KEY}/get/static?path=Banners/${file?.banner_url}`}
                 alt="Banner"
                 className="absolute w-full h-full object-cover"
               />

@@ -21,6 +21,7 @@ import {
 } from "react";
 import { IProject } from "@/types";
 import { Locale } from "@/i18n.config";
+import { API_KEY } from "@/utils";
 
 //custom sorting logic for one of our enum columns
 const sortStatusFn: SortingFn<Person> = (rowA, rowB, _columnId) => {
@@ -49,7 +50,7 @@ export default function ProjectsTable() {
     // setCurrentIndex(index);
     // console.log("index", index);
     const response = await fetch(
-      `http://127.0.0.1:9595/delete/project?projectid=${row.original.Id}`,
+      `${API_KEY}/delete/project?projectid=${row.original.Id}`,
       {
         headers: {
           "Content-Type": "application/json",
@@ -228,7 +229,7 @@ export default function ProjectsTable() {
   // console.log(table.getState().sorting);
 
   function getProjects() {
-    fetch("http://127.0.0.1:9595/get/project")
+    fetch(`${API_KEY}/get/project`)
       .then((res) => {
         // console.log(res);
         return res.json();

@@ -32,6 +32,7 @@ import { Locale } from "@/i18n.config";
 import { ICategory, news_categories } from "@/data/categories";
 
 import "./news.css"
+import { API_KEY } from "@/utils";
 
 export default function NewsPage() {
   const [currentLanguage, setCurrentLanguage] = useState<Locale>("en");
@@ -122,7 +123,7 @@ export default function NewsPage() {
 
   async function getNews() {
     try {
-      const response = await fetch("http://127.0.0.1:9595/get/news");
+      const response = await fetch(`${API_KEY}/get/news`);
       const data = await response.json();
       setData(data.reverse());
       console.log(data);
@@ -408,7 +409,7 @@ export default function NewsPage() {
                     className="w-[438px] max-w-full h-[321px] border relative flex flex-col justify-end items-start rounded-[13px] px-[30px] py-[20px] news__card"
                   >
                     <img
-                      src={`http://127.0.0.1:9595/get/static?path=Banners/${news.banner_url}`}
+                      src={`${API_KEY}/get/static?path=Banners/${news.banner_url}`}
                       alt={news.banner_url}
                       width={438}
                       height={321}

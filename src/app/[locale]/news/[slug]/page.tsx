@@ -15,6 +15,7 @@ import "swiper/css/pagination";
 import "./page.css";
 import { ICategory, news_categories } from "@/data/categories";
 import Link from "next/link";
+import { API_KEY } from "@/utils";
 
 export default function EachNews({ params }: { params: { slug: string } }) {
   // const currentNews: INews | undefined = news_data.find(
@@ -26,7 +27,7 @@ export default function EachNews({ params }: { params: { slug: string } }) {
 
   async function getNews() {
     try {
-      const response = await fetch("http://127.0.0.1:9595/get/news");
+      const response = await fetch(`${API_KEY}/get/news`);
       const data = await response.json();
       setData(data);
       console.log(data);
@@ -67,7 +68,7 @@ export default function EachNews({ params }: { params: { slug: string } }) {
         <div className="my-12 mx-[30px]">
           <img
             // src={slugNews?.bannerUrl}
-            src={`http://127.0.0.1:9595/get/static?path=Banners/${slugNews?.banner_url}`}
+            src={`${API_KEY}/get/static?path=Banners/${slugNews?.banner_url}`}
             alt="currentNews"
             className="w-full h-[450px] object-cover news_slug"
           />
@@ -152,7 +153,7 @@ export default function EachNews({ params }: { params: { slug: string } }) {
                   return (
                     <SwiperSlide key={image?.Title}>
                       <img
-                        src={`http://127.0.0.1:9595/get/static?path=NewsMedia/${image?.image_url}`}
+                        src={`${API_KEY}/get/static?path=NewsMedia/${image?.image_url}`}
                         className="w-[300px] h-[300px] object-cover rounded-lg"
                       />
                     </SwiperSlide>

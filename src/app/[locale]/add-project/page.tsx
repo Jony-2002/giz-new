@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/shadcn/ui/input";
+import { API_KEY } from "@/utils";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
@@ -127,7 +128,7 @@ export default function AddProjectPage() {
 
     console.log(data);
 
-    const response = await fetch("http://127.0.0.1:9595/add/project", {
+    const response = await fetch(`${API_KEY}/add/project`, {
       headers: {
         "Content-Type": "application/json",
       },

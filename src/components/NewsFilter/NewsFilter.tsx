@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/select";
 
 import "./NewsFilter.css";
+import { API_KEY } from "@/utils";
 
 export default function NewsFilter() {
   const [date, setDate] = useState<Date>();
@@ -39,7 +40,7 @@ export default function NewsFilter() {
 
   async function getNews() {
     try {
-      const response = await fetch("http://127.0.0.1:9595/get/news");
+      const response = await fetch(`${API_KEY}/get/news`);
       const data = await response.json();
       setData(data);
       console.log(data);
