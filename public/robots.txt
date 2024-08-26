@@ -9,5 +9,3 @@ Host: https://aegbao.tj
 
 # Sitemaps
 Sitemap: https://aegbao.tj/sitemap.xml
-Sitemap: https://aegbao.tj/my-custom-sitemap-1.xml
-Sitemap: https://aegbao.tj/my-custom-sitemap-2.xml
