@@ -8,6 +8,7 @@ import Partners from "@/components/Partners/Partners";
 import { getDictionary } from "@/lib/dictionary";
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
+import Head from "next/head";
 
 export default async function Home() {
   const Map = useMemo(
@@ -22,8 +23,27 @@ export default async function Home() {
   // const { page } = await getDictionary(lang);
   return (
     <main>
-      {/* <h1>Home Page</h1>
-      <h1>{page.home.title}</h1> */}
+      <Head>
+        <title>AEGBAO | Website</title>
+        <meta
+          name="description"
+          content="Association of Entrepreneurs of GBAO"
+        />
+        <meta
+          name="keywords"
+          content="Association of Entrepreneurs of GBAO, Ассоциация предпринимателей ГБАО, Ассотсиатсияи соҳибкорони ВМКБ"
+        />
+        <meta name="author" content="Munosibshoev Muyassar" />
+        <meta property="og:title" content="Association of Entrepreneurs of GBAO" />
+        <meta
+          property="og:description"
+          content="Association of Entrepreneurs of GBAO"
+        />
+        <meta property="og:image" content="/path-to-your-image.jpg" />
+        <meta property="og:url" content="https://aegbao.tj/en" />
+        <link rel="canonical" href="https://aegbao.tj/en" />
+        <link rel="icon" href="../favicon.ico" sizes="any" />;
+      </Head>
       <MainSlider />
       <About />
       <section className="h-[600px] flex justify-center items-center mx-[30px] pt-[100px] pb-[50px]">

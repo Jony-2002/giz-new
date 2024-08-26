@@ -33,6 +33,7 @@ import { ICategory, news_categories } from "@/data/categories";
 
 import "./news.css"
 import { API_KEY } from "@/utils";
+import Head from "next/head";
 
 export default function NewsPage() {
   const [currentLanguage, setCurrentLanguage] = useState<Locale>("en");
@@ -158,6 +159,27 @@ export default function NewsPage() {
 
   return (
     <main>
+      <Head>
+        <title>AEGBAO | Website</title>
+        <meta
+          name="description"
+          content="Association of Entrepreneurs of GBAO"
+        />
+        <meta
+          name="keywords"
+          content="Association of Entrepreneurs of GBAO, Ассоциация предпринимателей ГБАО, Ассотсиатсияи соҳибкорони ВМКБ"
+        />
+        <meta name="author" content="Munosibshoev Muyassar" />
+        <meta property="og:title" content="Association of Entrepreneurs of GBAO" />
+        <meta
+          property="og:description"
+          content="Association of Entrepreneurs of GBAO"
+        />
+        <meta property="og:image" content="/path-to-your-image.jpg" />
+        <meta property="og:url" content="https://aegbao.tj/en" />
+        <link rel="canonical" href="https://aegbao.tj/en" />
+        <link rel="icon" href="../favicon.ico" sizes="any" />;
+      </Head>
       <div className="wrapper__page">
         <div className="mx-[30px]">
           <h3 className="text-center text-[#C30F08] text-[34px] font-bold uppercase my-[50px]">
