@@ -3,9 +3,17 @@ import BigLogo from "@/assets/images/Frame 28763.svg";
 import About from "@/components/About/About";
 import Partners from "@/components/Partners/Partners";
 import { Locale } from "@/i18n.config";
+import { Metadata } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { useLayoutEffect, useState } from "react";
+
+export const metadata: Metadata = {
+  title: "AEGBAO | About Page",
+  description: "Association of Entrepreneurs of GBAO",
+  assets: "../favicon.ico",
+  icons: "../favicon.ico",
+};
 
 export default function AboutPage() {
   const [currentLanguage, setCurrentLanguage] = useState<Locale>("en");

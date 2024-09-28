@@ -9,8 +9,7 @@ module.exports = {
     robotsTxtOptions: {
       policies: [{ userAgent: '*', allow: '/', disallow: ['/admin', '/api'] }],
       additionalSitemaps: [
-        'https://itisconsole.com/my-custom-sitemap-1.xml',
-        'https://itisconsole.com/my-custom-sitemap-2.xml',
+        'https://aegbao.tj/my-custom-sitemap-0.xml',
       ],
     },
     // Additional configurations for specific URLs

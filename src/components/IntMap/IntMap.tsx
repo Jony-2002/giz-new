@@ -209,7 +209,7 @@ export default function IntMap(props: any) {
           console.log(ev);
         }}
       >
-        {data.map((project: IProject, index) => (
+        {data != null && data.map((project: IProject, index) => (
           <Marker
             key={index}
             position={project?.location?.coordinates}

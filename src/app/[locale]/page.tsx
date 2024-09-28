@@ -9,6 +9,14 @@ import { getDictionary } from "@/lib/dictionary";
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
 import Head from "next/head";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "AEGBAO | Home Page",
+  description: "Association of Entrepreneurs of GBAO",
+  assets: "../favicon.ico",
+  icons: "../favicon.ico",
+};
 
 export default async function Home() {
   const Map = useMemo(
