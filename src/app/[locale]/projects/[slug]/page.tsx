@@ -13,12 +13,12 @@ import "./page.css"
 import { API_KEY } from "@/utils";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "AEGBAO | Projects Page",
-  description: "Association of Entrepreneurs of GBAO",
-  assets: "../favicon.ico",
-  icons: "../favicon.ico",
-};
+// export const metadata: Metadata = {
+//   title: "AEGBAO | Projects Page",
+//   description: "Association of Entrepreneurs of GBAO",
+//   assets: "../favicon.ico",
+//   icons: "../favicon.ico",
+// };
 
 export default function EachNews({ params }: { params: { slug: string } }) {
   const [data, setData] = useState([]);

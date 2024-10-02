@@ -18,12 +18,12 @@ import Link from "next/link";
 import { API_KEY } from "@/utils";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "AEGBAO | News Page",
-  description: "Association of Entrepreneurs of GBAO",
-  assets: "../favicon.ico",
-  icons: "../favicon.ico",
-};
+// export const metadata: Metadata = {
+//   title: "AEGBAO | News Page",
+//   description: "Association of Entrepreneurs of GBAO",
+//   assets: "../favicon.ico",
+//   icons: "../favicon.ico",
+// };
 
 export default function EachNews({ params }: { params: { slug: string } }) {
   // const currentNews: INews | undefined = news_data.find(

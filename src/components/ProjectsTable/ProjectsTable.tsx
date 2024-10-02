@@ -249,7 +249,7 @@ export default function ProjectsTable() {
 
   return (
     <div className="my-10">
-      <table className="project__table">
+      {projectData?.length > 0 ? <table className="project__table">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id} className="tr_main">
@@ -269,8 +269,8 @@ export default function ProjectsTable() {
                             ? header.column.getNextSortingOrder() === "asc"
                               ? "Sort ascending"
                               : header.column.getNextSortingOrder() === "desc"
-                              ? "Sort descending"
-                              : "Clear sort"
+                                ? "Sort descending"
+                                : "Clear sort"
                             : undefined
                         }
                       >
@@ -296,11 +296,10 @@ export default function ProjectsTable() {
             return (
               <tr
                 key={row.id}
-                className={`${
-                  currentIndex == index
-                    ? "table_td h-[150px]"
-                    : "table_td h-[60px]"
-                }`}
+                className={`${currentIndex == index
+                  ? "table_td h-[150px]"
+                  : "table_td h-[60px]"
+                  }`}
               >
                 {row.getVisibleCells().map((cell) => {
                   return (
@@ -323,7 +322,8 @@ export default function ProjectsTable() {
             );
           })}
         </tbody>
-      </table>
+      </table> : <p>No data</p>}
+
     </div>
   );
 }

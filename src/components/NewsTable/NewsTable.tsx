@@ -154,7 +154,7 @@ export default function NewsTable() {
 
   return (
     <div className="my-10">
-      <table className="project__table">
+      {newsData?.length > 0 ? <table className="project__table">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id} className="tr_main">
@@ -174,8 +174,8 @@ export default function NewsTable() {
                             ? header.column.getNextSortingOrder() === "asc"
                               ? "Sort ascending"
                               : header.column.getNextSortingOrder() === "desc"
-                              ? "Sort descending"
-                              : "Clear sort"
+                                ? "Sort descending"
+                                : "Clear sort"
                             : undefined
                         }
                       >
@@ -223,7 +223,8 @@ export default function NewsTable() {
               );
             })}
         </tbody>
-      </table>
+      </table> : <p>No data</p>}
+
     </div>
   );
 }
